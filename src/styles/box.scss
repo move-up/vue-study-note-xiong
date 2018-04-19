@@ -1,0 +1,102 @@
+/* 盒模型相关样式 */
+
+/* margin */
+@mixin mt($n:10) {
+  margin-top: $n + px;
+}
+@mixin mr($n:10) {
+  margin-right: $n + px;
+}
+@mixin mb($n:10) {
+  margin-bottom: $n + px;
+}
+@mixin ml($n:10) {
+  margin-left: $n + px;
+}
+.mt-5 {
+  @include mt(5);
+}
+.mt-10 {
+  @include mt();
+}
+.mt-15 {
+  @include mt(15);
+}
+.mr-3 {
+  @include mr(3); // 通常用作表单元素间隔
+}
+.mr-5 {
+  @include mr(5);
+}
+.mr-10 {
+  @include mr();
+}
+.mr-15 {
+  @include mr(15);
+}
+.mb-5 {
+  @include mb(5);
+}
+.mb-10 {
+  @include mb();
+}
+.mb-15 {
+  @include mb(15);
+}
+.ml-5 {
+  @include ml(5);
+}
+.ml-10 {
+  @include ml();
+}
+.ml-15 {
+  @include ml(15);
+}
+
+/* padding */
+@mixin pt($n:10) {
+  padding-top: $n + px;
+}
+@mixin pr($n:10) {
+  padding-right: $n + px;
+}
+@mixin pb($n:10) {
+  padding-bottom: $n + px;
+}
+@mixin pl($n:10) {
+  padding-left: $n + px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+.ptb-10 {
+  @include pt();
+  @include pb();
+}
+.plr-10 {
+  @include pl();
+  @include pr();
+}
+.pl-10 {
+  @include pl();
+}
+.pr-10 {
+  @include pr();
+}
+.pb-10 {
+  @include pb();
+}
+.pl-10 {
+  @include pl();
+}
+
+/* border */
+.bordered {
+  border: 1px solid $color-border;
+}
+
+/* width */
+.w-half {
+  width: 50%;
+}

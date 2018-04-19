@@ -1,0 +1,14 @@
+.u-panel-title {
+  vertical-align: text-bottom;
+  margin-bottom: 10px;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    margin-right: 5px;
+    height: 15px;
+    vertical-align: text-bottom;
+    width: 4px;
+    background-color: $color-primary;
+  }
+}

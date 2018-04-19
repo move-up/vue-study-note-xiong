@@ -1,0 +1,82 @@
+.page-login {
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/images/login_bg.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .login-header {
+      height: 62px;
+      padding: 14px 60px;
+      background: rgba(20,37,52,.5);
+    }
+
+    .login-con {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-60%);
+        width: 340px;
+        background: #10202d;
+        border-bottom: 2px solid $color-primary;
+
+        .form-title {
+          padding: 22px 30px;
+          height: 70px;
+          line-height: 26px;
+          font-size: 18px;
+          color: $color-primary;
+          font-weight: 700;
+          border-bottom: 1px solid rgba(255, 255, 255, .8);
+        }
+
+        .form-input {
+          height: 40px;
+          border: 1px solid rgba(255, 255, 255, 0.8);
+
+          .ivu-input-group-prepend,
+          .ivu-input {
+            background: transparent;
+            color: #fff;
+            border: none;
+            height: 40px;
+          }
+
+          .ivu-input:focus {
+            box-shadow: none;
+          }
+        }
+
+        .form-btn-login {
+          height: 42px;
+          border-radius: 0;
+        }
+
+        .ivu-card {
+          background: transparent;
+
+          .ivu-card-body {
+            padding-left: 30px;
+            padding-right: 30px;
+          }
+        }
+
+        .login-con-header{
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .form-con{
+            padding: 10px 0 0;
+        }
+
+        .login-tip{
+            font-size: 10px;
+            text-align: center;
+            color: #c3c3c3;
+        }
+    }
+}

@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>echarts-line</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
       </div>
       <div id="line"></div>
     </el-card>
