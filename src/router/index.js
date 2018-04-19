@@ -26,7 +26,12 @@ const router =  new Router({
       name: 'login',
       component: resolve => { require(['@/pages/login/index'], resolve) },
     },
-    { path: '/404', component: resolve => { require(['@/pages/errorPage/404'], resolve) }, hidden: true },
+    {
+      path: '/404',
+      name: '404',
+      component: resolve => { require(['@/pages/errorPage/404'], resolve) },
+      hidden: true
+    }
   ]
 })
 
