@@ -15,7 +15,7 @@ const router =  new Router({
       redirect: '/home',
       children: [{
         path: '/home',
-        component: () => import('@/pages/home/index'),
+        component: resolve => { require(['@/pages/home/index'], resolve) },
         name: 'home',
         meta: { title: 'home', icon: 'home', noCache: true }
       }]
@@ -24,9 +24,9 @@ const router =  new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/pages/login/index')
+      component: resolve => { require(['@/pages/login/index'], resolve) },
     },
-    { path: '/404', component: import('@/pages/errorPage/404'), hidden: true },
+    { path: '/404', component: resolve => { require(['@/pages/errorPage/404'], resolve) }, hidden: true },
   ]
 })
 
