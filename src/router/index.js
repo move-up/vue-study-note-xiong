@@ -42,7 +42,9 @@ const router =  new Router({
 router.beforeEach(({ meta, path, name }, from, next) => {
   var { auth = true } = meta
   var isLogin = Boolean(store.state['user']['name']) //true用户已登录， false用户未登录
-
+  if (isLogin && path === '/login') {
+    return next({ path: '/' })
+  }
   if (auth && !isLogin && path !== '/login') {
     return next({ path: '/login' })
   }
