@@ -8,7 +8,6 @@
 export default {
   name: 'app',
   created () {
-    console.log(this.$store, 'sss')
   }
 }
 </script>

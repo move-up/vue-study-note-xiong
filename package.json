@@ -10,7 +10,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@falcon/FUI": "^1.5.0",
     "axios": "^0.17.1",
     "echarts": "^4.0.4",
     "element-ui": "^2.3.4",

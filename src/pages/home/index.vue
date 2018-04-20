@@ -5,7 +5,7 @@
         <span>echarts-line</span>
         <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
       </div>
-      <div id="line"></div>
+      <div id="line" :style="{width: l.width, height: l.height}"></div>
     </el-card>
   </div>
 </template>
@@ -45,7 +45,11 @@
     },
     data () {
       return {
-        line: null
+        line: null,
+        l: {
+          width: '480px',
+          height: '300px'
+        }
       }
     },
     computed: {
@@ -61,7 +65,7 @@
     },
     methods: {
       initLine () {
-        this.$nextTick(() => {
+        // this.$nextTick(() => {
           this.line = echarts.init(document.getElementById('line'))
           this.line.setOption({
               title: {
@@ -78,7 +82,7 @@
                   data: [5, 20, 36, 10, 10, 20]
               }]
           })
-        })
+        // })
       }
     }
   }

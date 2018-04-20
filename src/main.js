@@ -5,9 +5,6 @@ import App from './App'
 import router from './router'
 import store from '@/store/index'
 
-// import FUI from '@falcon/FUI'
-// import '@falcon/FUI/dist/fui.min.css'
-
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 
