@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store/index'
+import Cookies from 'js-cookie'
 
 import Layout from '@/components/Layout'
 
@@ -41,7 +42,7 @@ const router =  new Router({
 // 路由拦截
 router.beforeEach(({ meta, path, name }, from, next) => {
   var { auth = true } = meta
-  var isLogin = Boolean(store.state['user']['name']) //true用户已登录， false用户未登录
+  var isLogin = store.state['user']['isLogin'] //true用户已登录， false用户未登录
   if (isLogin && path === '/login') {
     return next({ path: '/' })
   }

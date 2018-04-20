@@ -22,6 +22,7 @@
 <script>
   import { mapActions } from 'vuex'
   import { USER_SIGNIN } from '@/store/modules/user'
+  import Cookies from 'js-cookie'
 
   export default {
     name: '',
@@ -66,8 +67,9 @@
 			handleLogin () {
 				this.$refs['form'].validate((valid) => {
           if (valid) {
-            this.USER_SIGNIN(this.user)
-            this.$router.replace({ path: '/home' })
+            this.USER_SIGNIN(this.user['name']).then(() => {
+              this.$router.push({ path: '/home' })
+            })
           } else {
             this.$message.error('用户名或密码错误！');
             return false;
@@ -80,6 +82,7 @@
 
 <style lang="scss">
   .c-login {
+    margin-right: 40px;
     width: 480px;
     height: 264px;
   }
@@ -87,6 +90,6 @@
   .page-login {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
   }
 </style>
