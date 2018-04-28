@@ -12,7 +12,7 @@
           <el-input type="password" v-model="user.pw" placeholder="请输入密码"></el-input>
         </el-form-item>
         <div class="clearfix">
-          <el-button class="f-r" native-type='submit' @click="handleLogin">登录</el-button>
+          <el-button class="f-r" native-type='submit' @click="handleLogin" :loading="login.loading">{{ login.btnText }}</el-button>
         </div>
       </el-form>
     </el-card>
@@ -33,6 +33,10 @@
     },
     data () {
       return {
+        login: {
+          loading: false,
+          btnText: '登录'
+        },
         user: {
           name: '',
           pw: ''
@@ -67,8 +71,10 @@
 			handleLogin () {
 				this.$refs['form'].validate((valid) => {
           if (valid) {
+            this.beforeLogin()
             this.USER_SIGNIN(this.user['name']).then(() => {
               this.$router.push({ path: '/home' }, () => {
+                this.afterLogin()
                 this.$message.success('登录成功！');
               })
             })
@@ -77,7 +83,15 @@
             return false;
           }
         });
-			}
+			},
+      beforeLogin () {
+        this.login.loading = true // 显示加载中
+        this.login.btnText = '请求中'
+      },
+      afterLogin () {
+        this.loading = false // 隐藏加载中
+        this.login.btnText = '登录'
+      }
     }
   }
 </script>
