@@ -54,7 +54,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: '/vue-study-note-xiong/dist/static',
+    assetsSubDirectory: 'static',
     assetsPublicPath: '/vue-study-note-xiong/dist/',
 
     /**
