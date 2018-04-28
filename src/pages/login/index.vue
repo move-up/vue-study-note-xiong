@@ -45,7 +45,7 @@
           pw: [
             { required: true, message: '请输入密码', trigger: 'blur' },
             { min: 8, max: 20, message: '长度在 8 到 20 个字符', trigger: 'blur' },
-            { pattern: /[a-zA-Z0-9:',_!();\.\?\-\+，。；：‘’（）@！？]+/, message: '输入内容只能是数字，字母与特殊符号！', trigger: 'blur'}
+            { pattern: /[a-zA-Z0-9:',_!();\.\?\-\+，。；：‘’（）@！？]+/, message: '输入内容只能是数字，字母与特殊符号！', trigger: 'blur' }
           ]
         }
       }
@@ -68,7 +68,9 @@
 				this.$refs['form'].validate((valid) => {
           if (valid) {
             this.USER_SIGNIN(this.user['name']).then(() => {
-              this.$router.push({ path: '/home' })
+              this.$router.push({ path: '/home' }, () => {
+                this.$message.success('登录成功！');
+              })
             })
           } else {
             this.$message.error('用户名或密码错误！');
