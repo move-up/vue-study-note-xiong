@@ -38,6 +38,13 @@ export default {
 
 <style lang='scss' scoped>
 .app-main {
+  position: absolute;
   padding: 10px;
+  padding-left: 210px;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
 }
 </style>

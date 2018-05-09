@@ -46,4 +46,8 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+  .layout {
+    padding-top: 50px;
+    padding-left: 200px;
+  }
 </style>

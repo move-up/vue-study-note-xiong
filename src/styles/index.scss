@@ -13,7 +13,11 @@ body,
   height: 100%;
   position: relative;
   background: #f5f5f5;
-  overflow-y: hidden; // 修复select下拉的时候造成的纵向滚动条闪动问题
+  overflow: hidden; // 修复select下拉的时候造成的纵向滚动条闪动问题
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .clearfix {

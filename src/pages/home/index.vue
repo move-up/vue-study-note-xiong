@@ -1,14 +1,82 @@
 <template>
   <div class="page-index">
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
-        <span>echarts-line</span>
-        <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
-      </div>
-      <div id="line" :style="{width: l.width, height: l.height}"></div>
-    </el-card>
+    <el-row :gutter="16">
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>echarts-keyboard</span>
+            <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
+          </div>
+          <KeyboardChart id="chart-keyboard" width="100%" height=""></KeyboardChart>
+        </el-card>
+      </el-col>
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>echarts-line</span>
+            <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
+          </div>
+          <LineChart id="chart-line" width="100%" height="100%"></LineChart>
+        </el-card>
+      </el-col>
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>echarts-mixChart</span>
+            <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
+          </div>
+          <MixChart id="chart-mix" width="100%" height="100%"></MixChart>
+        </el-card>
+      </el-col>
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>加法计算器</span>
+            <el-button style="float: right; padding: 3px 0" type="text">go</el-button>
+          </div>
+          <Add></Add>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
+
+<script>
+  import Add from './add'
+  import KeyboardChart from './charts/keyboard'
+  import LineChart from './charts/line'
+  import MixChart from './charts/mixChart'
+  import AutoComplete from './autoComplete'
+
+  export default {
+    name: '',
+    components: {
+      Add,
+      AutoComplete,
+      KeyboardChart,
+      LineChart,
+      MixChart
+    },
+    props: {
+    },
+    data () {
+      return {
+      }
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
+    created () {
+    },
+    mounted () {
+    },
+    methods: {
+    }
+  }
+</script>
 
 <style>
   .text {
@@ -29,65 +97,7 @@
   }
 
   .box-card {
-    width: 480px;
+    /* width: 480px; */
+    margin-bottom: 15px;
   }
-</style>
-
-<script>
-  import echarts from 'echarts'
-
-  export default {
-    name: '',
-    components: {
-
-    },
-    props: {
-    },
-    data () {
-      return {
-        line: null,
-        l: {
-          width: '480px',
-          height: '300px'
-        }
-      }
-    },
-    computed: {
-
-    },
-    watch: {
-
-    },
-    created () {
-    },
-    mounted () {
-      this.initLine()
-    },
-    methods: {
-      initLine () {
-        // this.$nextTick(() => {
-          this.line = echarts.init(document.getElementById('line'))
-          this.line.setOption({
-              title: {
-                  text: 'ECharts 入门示例'
-              },
-              tooltip: {},
-              xAxis: {
-                  data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-              },
-              yAxis: {},
-              series: [{
-                  name: '销量',
-                  type: 'bar',
-                  data: [5, 20, 36, 10, 10, 20]
-              }]
-          })
-        // })
-      }
-    }
-  }
-</script>
-
-<style>
-
 </style>

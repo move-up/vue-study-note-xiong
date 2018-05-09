@@ -67,9 +67,15 @@ export default {
 
 <style lang='scss' scoped>
 .layout-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 50px;
+  padding-left: 200px;
   line-height: 50px;
   border-radius: 0px !important;
+  z-index: 100;
 
   .right-menu {
     float: right;

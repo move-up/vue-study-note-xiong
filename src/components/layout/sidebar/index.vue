@@ -29,4 +29,13 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+  .layout-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: #f1f1f1;
+    z-index: 200;
+  }
 </style>
