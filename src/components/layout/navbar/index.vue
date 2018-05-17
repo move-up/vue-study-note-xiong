@@ -1,6 +1,7 @@
 <!-- header -->
 <template>
   <el-menu class="layout-navbar" mode="horizontal">
+    <breadcrumb class="breadcrumb-container"></breadcrumb>
     <div class="right-menu">
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -32,11 +33,14 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import { USER_SIGNOUT } from '@/store/modules/user'
+import Breadcrumb from './breadcrumb'
 
 export default {
   name: '',
 
-  components: {},
+  components: {
+    Breadcrumb
+  },
 
   props: {},
 

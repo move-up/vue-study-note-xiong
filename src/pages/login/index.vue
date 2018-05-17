@@ -1,5 +1,5 @@
 <template>
-  <div class="page-login">
+  <div class="page-login" :class="classBg">
     <el-card class="c-login">
       <div slot="header" class="clearfix">
         <span>登录</span>
@@ -55,7 +55,9 @@
       }
     },
     computed: {
-
+      classBg () {
+        return Math.random() > 0.5 ? 'bg1' : 'bg2'
+      }
     },
     watch: {
 
@@ -73,7 +75,7 @@
           if (valid) {
             this.beforeLogin()
             this.USER_SIGNIN(this.user['name']).then(() => {
-              this.$router.push({ path: '/home' }, () => {
+              this.$router.push({ path: '/' }, () => {
                 this.afterLogin()
                 this.$message.success('登录成功！');
               })
